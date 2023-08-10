@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guess Game</title>
+</head>    
+    <body>
+        <button onclick="computerMove('heads')">heads</button>
+        <button onclick="computerMove('tails')">tails</button>
+        <script>
+             
+            function computerMove(playerPick){
+                let number= Math.random();
+                let result= ''
+                let score=JSON.parse(localStorage.getItem('score'))||{
+                    Win : 0,
+                    Lose : 0  };
+                    let computerPick=''; 
+                if(number<=1/2){
+                    computerPick= 'heads';
+                } else {computerPick='tails';}
+                
+                if (playerPick==='heads'){
+                    if(computerPick=== 'heads'){
+                        result='You Won!';
+                        score.Win++;
+                    } else {result= 'You Lose!'; score.Lose++;}
+                }
+                if (playerPick==='tails'){
+                    if(computerPick==='tails'){
+                        result='You Won!';
+                        score.Win++;
+                    }else {result= 'You Lose!'; score.Lose++;}
+                }
+
+               
+            
+
+                localStorage.setItem('score',JSON.stringify(score));
+                alert(`You picked ${playerPick}, Computer picked ${computerPick},${result}
+Wins: ${score.Win}, Loses: ${score.Lose}`)
+                
+            }
+
+
+
+        </script>
+    </body>
+
+</html>
