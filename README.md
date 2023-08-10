@@ -1,2 +1,2 @@
 # rock paper scissors
- Simpke RPS game with  your PC  by JS. Or Auto playing
+ Simple RPS game with  your PC  by JS. Or Auto playing
